@@ -20,11 +20,11 @@ def detectar_letras_centrales(ruta_imagen):
 
     #Aplicar el threshold
     th = cv2.adaptiveThreshold(
-    blur, 255,
-    cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
-    cv2.THRESH_BINARY_INV,
-    blockSize=15,
-    C=4
+        blur, 255,
+        cv2.ADAPTIVE_THRESH_GAUSSIAN_C,
+        cv2.THRESH_BINARY_INV,
+        blockSize=15,
+        C=4
     )
     
     #Definir el kernel
@@ -41,24 +41,30 @@ placa1 = detectar_letras_centrales(imagen1)
 placa2 = detectar_letras_centrales(imagen2)
 
 #Mostrar las imagenes 
-cv2.imshow(placa1)
-cv2.imshow(placa2)
+cv2.imshow("Placa 1", placa1)
+cv2.imshow("Placa 2", placa2)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
 
 #Definir el lector
 reader = easyocr.Reader(['en','es'], gpu=False)  # ajustar idiomas según necesidad
 
 #Procesar los resultados
-results = reader.readtext(placa1,
-                          detail=1,
-                          paragraph=False,
-                          contrast_ths=0.05,
-                          adjust_contrast=0.7)
+results = reader.readtext(
+    placa1,
+    detail=1,
+    paragraph=False,
+    contrast_ths=0.05,
+    adjust_contrast=0.7
+)
 
-results2 = reader.readtext(placa2,
-                          detail=1,
-                          paragraph=False,
-                          contrast_ths=0.05,
-                          adjust_contrast=0.7)
+results2 = reader.readtext(
+    placa2,
+    detail=1,
+    paragraph=False,
+    contrast_ths=0.05,
+    adjust_contrast=0.7
+)
 
 #Imprimir los resultados
 print("EasyOCR encontró:")
