@@ -3,8 +3,8 @@ import cv2
 import easyocr
 
 #Asignar las rutas de las imagenes
-imagen1= "/content/placa_q.jpg"
-imagen2= "/content/placa_4.jpg"
+imagen1= "placa_q.jpg"
+imagen2= "placa_4.jpg"
 
 def detectar_letras_centrales(ruta_imagen):
     # Carga de la imagen
