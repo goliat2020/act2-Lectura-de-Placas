@@ -41,6 +41,9 @@ EasyOCR encontró en placa 2:
 ## Notas 
 - La detección puede variar según la calidad y orientación de la imagen.
 - Puedes ajustar los parámetros de GaussianBlur, adaptiveThreshold y OCR para mejores resultados.
+- Si el codigo se quiere correr en Google Colab se deben de cambiar algunas cosas:
+  - Agregar: from google.colab.patches import cv2_imshow
+  - Cambiar cv2.imshow() por cv2_imshow()
 
 ## Creditos 
 - OpenCV
