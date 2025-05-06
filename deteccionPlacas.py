@@ -1,7 +1,6 @@
 import cv2
 #Instalar easyocr antes de ejecutar el codigo
 import easyocr
-from google.colab.patches import cv2_imshow
 
 #Asignar las rutas de las imagenes
 imagen1= "/content/placa_q.jpg"
@@ -42,8 +41,8 @@ placa1 = detectar_letras_centrales(imagen1)
 placa2 = detectar_letras_centrales(imagen2)
 
 #Mostrar las imagenes 
-cv2_imshow(placa1)
-cv2_imshow(placa2)
+cv2.imshow(placa1)
+cv2.imshow(placa2)
 
 #Definir el lector
 reader = easyocr.Reader(['en','es'], gpu=False)  # ajustar idiomas según necesidad
