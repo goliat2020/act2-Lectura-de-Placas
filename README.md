@@ -13,8 +13,8 @@ pip install opencv-python easyocr
 ## Archivos a colocar:
 
 ```bash
-imagen1= "placa_q.jpg"
-imagen2= "placa_4.jpg"
+imagen1= "img\placa_q.jpg"
+imagen2= "img\placa_4.jpg"
 ```
 Modificar dependiendo de la ruta de la foto que quieras analizar
 
